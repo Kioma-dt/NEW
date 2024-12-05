@@ -70,14 +70,10 @@ void CountCodes(char ** words, int n_words, int * size_of_word, int * codes){
     }
 }
 
-void ChangeWords(char ** words, int n_words, int * size_of_word , int * codes){
-    for (int i = 0; i < n_words;i++){
-        if (codes[i] % 2 == 0){
-            for (int j = 0; j < (size_of_word[i] - 1) / 2; j++){
-                std::swap(words[i][j], words[i][(size_of_word[i] - 1) - j - 1]);
-            }  
-        }
-    }
+void ChangeWords(char * word, int size){
+    for (int i = 0; i < (size - 1) / 2; i++){
+        std::swap(word[i], word[(size - 1) - i - 1]);
+    }  
 }
 
 unsigned int CheckUnsigned() {

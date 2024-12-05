@@ -74,7 +74,12 @@ void Task_3(char ** words){
     int *codes = new int[n_words]();
 
     CountCodes(words, n_words, size_of_word, codes);
-    ChangeWords(words, n_words, size_of_word, codes);
+
+    for (int i = 0; i < n_words;i++){
+        if (codes[i] % 2 == 0){
+            ChangeWords(words[i], size_of_word[i]);
+        }
+    }
 
     std::cout << "Коды строк: \n";
     for (int i = 0; i < n_words; i++){
